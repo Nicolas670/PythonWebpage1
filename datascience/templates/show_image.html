@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <h1>My single Image</h1>
+</head>
+
+<body>
+    <div class="row">
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ object.picture.url }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.title }}</h5>
+                <p class="card-text"> {{ object.title }}.</p>
+            </div>
+        </div>
+        <img src="{{ picture.url }}" >
+
+    </div>
+</body>
+{% endblock %}

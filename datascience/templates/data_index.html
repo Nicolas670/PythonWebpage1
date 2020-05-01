@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uplaoded Images</title>
+</head>
+<body>
+<ul>
+    {% for data in data_list %}
+        <h2>{{ data.title}}</h2>
+    <img src="{{ data.picture.url }}" alt="{{ data.title }}">
+    {% endfor %}
+</ul>
+</body>
+</html>
+{% endblock %}
