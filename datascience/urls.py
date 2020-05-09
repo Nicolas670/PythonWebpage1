@@ -11,6 +11,10 @@ urlpatterns = [
     path("post/", views.data_upload, name="add_post"),
     path("upload/", views.upload, name="upload"),
     path("display", views.show_pictures, name="display"),
+    path("upload/text", views.upload_text, name="upload_text"),
+    path("display/wordcloud", views.wordcloud, name="wordcloud"),
+
+
 
 
 ]
