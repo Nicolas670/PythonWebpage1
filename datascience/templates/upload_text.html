@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Natural Language Processing</title>
+        </head>
+        <body>
+            <h1>Natural Language Processing</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit your Text</button>
+            </form>
+        </body>
+    </html>
+
+{% endblock %}
