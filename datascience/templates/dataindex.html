@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <section id="header">
+
+        <div class="container text-center">
+            <div class="topic-header">
+                <h1>Natural Language Processing</h1>
+            </div>
+            <div class="row">
+                    <div class="col-md-6 " id="nlp-wordcloud">
+                        <div class="card">
+                            <img src="/static/images/wordcloud.png" alt="" class="card-img-top">
+                            <h4 class="card-title">Word Clouds</h4>
+                            <p class="card-text">A Word Cloud displays the most frequent words of a text / many text documents. The more often a word occurs in a given text the bigger it is displayed.</p>
+                            <a href="{% url 'upload_wordcloud_text' %}" class="btn btn-primary">Try it out.</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="nlp-lda">
+                        <div class="card">
+                            <img src="/static/images/ldavis2.png" alt="" class="card-img-top">
+                            <h4 class="card-title">Topic Modelling LDA</h4>
+                            <p class="card-text">Topic Modelling deduces topics from a collection of texts. It belongs to the category of unsupervised Machine Learning Algorithms.</p>
+                            <a href="{% url 'nlp' %}" class="btn btn-primary">Try it out.</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+
+{% endblock %}
