@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+    <head>
+
+        <script src="jquery-3.5.0.min.js"></script>
+        <script>
+            $(function(){
+              $("#includedContent").load("lda_vis.html");
+            });
+        </script>
+
+        <title>Nicolas Vietor</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <!--------Navigation Bar-------->
+        <section id = "header">
+            <div class="container text-center">
+                <div class="user-box">
+                    <img src="/static/images/Bewerbungsfoto.jpg" width="236.2" height="335.8">
+                    <h1>Nicolas Vietor</h1>
+
+
+                </div>
+            </div>
+            <div class="scroll-btn">
+                <div class="scroll-bar"><a href="#about"><span> </span></a></div>
+            </div>
+        </section>
+        <!-----------------------User-Info Section----------------------->
+        <section id="user-info">
+                <!----------About---------->
+            <div class="about containter" id="about">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <!--Bilder Abmesung: width="393.6" height="559.3"-->
+                        <img src="/static/images/Bewerbungsfoto.jpg" class="profile-img">
+                    </div>
+                    <div class="col-md-6" id="description">
+                        <h3>ÜBER MICH</h3>
+                        <p>
+                            Angefangen bei Sport, über Psychologie und Philosophie, hin zu Medizin, Biologie, Chemie und Physik interessierte ich mich schon immer vielseitig, außer für Wirtschaft und Informatik. Natürlicherweise entschloss ich mich daher dazu Wirtschaftsinformatik zu studieren.
+                            Abgesehen davon, dass ich mich mittlerweile sehr für Informatik interessiere, sah ich damals in diesem Studium eine gute Möglichkeit all meine Interessen zu kombinieren. Mit Data Science habe ich für mich nun eine weitere Gemeinsamkeit all meiner Interessen identifiziert.<br><br>
+
+                            Den Inhalt meiner Arbeit hatte ich also gefunden. Das Wie fand ich, als ich vor eineinhalb Jahren meine Bachelorarbeit zu dem Thema Distributed Ledger basierter Energiedistribution schrieb. Die war die bis dato schönste Beschäftigung für mich. Ich könnte kaum sagen, was mir daran mehr Freude bereitete. Das Einlesen in die Literatur einer neuen und im Wandel befindlichen Technologie, die Diskussionen mit meinem Betreuer um das richtige Verständnis, die Konzeption meiner Anwendung oder das Artikulieren und Ausarbeiten meiner Ideen. Was ich jedoch mit Sicherheit sagen kann ist, dass ich wieder auf diese Weise arbeiten möchte.
+                        </p>
+                        <h4>PROGRAMMIERSPRACHEN</h4>
+                        <div class="skills-bar">
+
+                            <p>VBA</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 65%;">65%</div>
+                            </div>
+
+                            <p>Python</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 50%;">50%</div>
+                            </div>
+
+                            <p>SQL</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 25%;">25%</div>
+                            </div>
+
+                            <p>C#</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 30%;">30%</div>
+                            </div>
+
+                            <p>PySpark</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 15%;">15%</div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!----------About---------->
+            <div class="resume" id="resume">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="text-center">Erfahrung</h3>
+                            <ul class="timeline">
+                                <li>
+                                    <h4><span>2019</span> IT-Projektmanager</h4>
+                                    <p>
+                                        Nach meinem Studium begann ich als IT-Projektmanager bei Rödl und Partner in Nürnberg zu arbeiten. Meine Aufgaben umfassten die Entwicklung eines Blockchain Showcases, die Einführung eines neuen Enterprise Architecture Management Tools, sowie das Erstellen eines neuen Reportings für die deutschlandweite IT Rödl und Partners.<br>
+                                        <b>Firma</b> - Rödl und Partner<br>
+                                        <b>Dauer</b> - 8 Monate [01.02.19 - 30.09.2019]<br>
+                                        <b>Standort</b> - Nürnberg<br>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4><span>2018</span> Bachelorand und Werkstudent</h4>
+                                    <p>
+                                        Als Bachelorand wurde mir die Möglichkeit geboten, meine Bachelorarbeit zum Thema Distributed Ledger mit Rödl und Partner zu schreiben. Begleitend arbeitete ich an der Konzeption und Umsetzung eines Blockchain Showcase in der Energiebranche mit.<br>
+                                        <b>Firma</b> - Rödl und Partner<br>
+                                        <b>Dauer</b> - 12 Monate [01.02.18 - 31.01.2019]<br>
+                                        <b>Standort</b> - Nürnberg<br>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4><span>2017</span> Praktikant - Projektmanagement</h4>
+                                    <p>
+                                        Während meines Pratikums befasste ich mich hauptsächlich mit der Makroprogrammierung für interne und externe Anwendungsfelder, sowie der Unterstützung in projektbezogener Arbeit.<br>
+                                        <b>Firma</b> - Rödl und Partner<br>
+                                        <b>Dauer</b> - 5 Monate [01.09.17 - 31.01.2018]<br>
+                                        <b>Standort</b> - Nürnberg<br>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="text-center">Ausbildung</h3>
+                            <ul class="timeline">
+                                <li>
+                                    <h4><span>2020</span> IBM Data Science Zertifikat</h4>
+                                    <p>
+                                        Um meine Fähigkeiten im Bereich Data Science zu vertiefen, schloss ich die dreimonatige professional, sowie die zweimonatige advanced Data Science Zertifizierung von IBM ab.
+                                        Diese Zertifizierungen umfassen unter anderem folgende Themen: Apache Spark, Daten Visualisierung, Applied Machine- und Deeplearning, SQL Datenbanken, Signal Processing und DS Projktmethodologien.
+                                        Final wurden beide Kurse mit einem Capstone Projekt abgeschlossen. Diese Projekt finden sich in meinem Github.<br>
+                                        <b>Studienrichtung:</b> - Data Science<br>
+                                        <b>Inhalte:</b> Python, Machine Learning, Visualisierung, Spark, SQL<br>
+                                        <b>Verifizierung:</b><a target="blank" rel="noopener noreferrer" href="https://www.youracclaim.com/users/nicolas-vietor"> über Acclaim</a> <br>
+                                    </p>
+                                    <h4><span>2014 - 2019</span> Technische Hochschule Nürnberg</h4>
+                                    <p>
+                                        Mein Studium lehrte mich die Grundlagen der Programmierung in C# und SQl, technisches Verständnis in Rechnerkommunikation, Rechner- und Anwendungsarchitektur, sowie wirtschaftliche und Management spezifische Theorien und Praktiken. In meiner Bachelorarbeit mit dem Titel "Vergleich der Distributed Ledger Technologien IOTA und Ethereum im Kontext der Energiewirtschaft" konnte ich meinen Drang Neues zu lernen voll ausleben.<br>
+                                        <b>Studienrichtung</b> - Wirtschaftsinformatik<br>
+                                        <b>Abschluss</b> - Bachelor of Science<br>
+                                        <b>Bachelorarbeit</b> - Distributed Ledger Technologien<br>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!----------Interessen---------->
+            <div class="projects" id="projects">
+                <h3 class="text-center">Meine Freizeitprojekte</h3>
+                <p class="text-center"> Für mich ist der beste Weg etwas zu lernen ein spannendes Projekt daraus zu machen.<br>
+                    Alle nachfolgenden Projekte sind aus dem Wunsch etwas Neues zu lernen entstanden.</p>
+                    <div class="text-center">
+                        <div class="carousel">
+
+                                <div id="mySlider" class="carousel slide" data-ride="carousel">
+                                      <ol class="carousel-indicators">
+                                        <li data-target="#mySlider" data-slide-to="0" class="active"></li>
+                                        <li data-target="#mySlider" data-slide-to="1"></li>
+                                        <li data-target="#mySlider" data-slide-to="2"></li>
+                                        <li data-target="#mySlider" data-slide-to="3"></li>
+                                      </ol>
+                                      <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="img-container">
+                                                <img class="d-block w-100" src="/static/images/QuantumSlide2.jpg" alt="First slide">
+                                            </div>
+                                              <!--div class="carousel-caption d-none d-md-block">
+                                                <h5>Aktienanalyse mit Python</h5>
+                                                <h6>Historienbasierte Kursprognose mit Python und scikitlearn.</h6>
+                                              </div-->
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="img-container">
+                                                <img class="d-block w-100" src="/static/images/ArduinoSlide.PNG" alt="Second slide">
+                                            </div>
+                                            <!--div class="carousel-caption d-none d-md-block">
+                                                <h5>Bewässerungssystem mit Arduino</h5>
+                                                <h6>Sensorgesteuertes Bewässerungssystem für Topfpflanzen mit Arduino.</h6>
+                                              </div-->
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="img-container">
+                                                <img class="d-block w-100" src="/static/images/AktienanalyseSlide.PNG" alt="Third slide">
+                                            </div>
+                                            <!--div class="carousel-caption d-none d-md-block">
+                                                <h5>Quantum Computing</h5>
+                                                <h6>Programmierung von Quantenshaltkreisen mit IBM Q Experience.</h6>
+                                              </div-->
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="img-container">
+                                                <img class="d-block w-100" src="/static/images/WebprogrammierungSlide2.PNG" alt="Fourth slide">
+                                            </div>
+                                            <!--div class="carousel-caption d-none d-md-block">
+                                                <h5>Quantum Computing</h5>
+                                                <h6>Programmierung von Quantenshaltkreisen mit IBM Q Experience.</h6>
+                                              </div-->
+                                        </div>
+                                      </div>
+                                      <a class="carousel-control-prev" href="#mySlider" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                      </a>
+                                      <a class="carousel-control-next" href="#mySlider" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                      </a>
+                                    </div>
+
+                        </div>
+                    </div>
+            </div>
+
+            <!----------IBM Data Science Capstone Video---------->
+            <div class="ibm-capstone-video" id="ibm-capstone-video">
+                <div class="container">
+                    <h3 class="text-center">Mein IBM Advanced Data Science Capstone Projekt</h3>
+                    <!--p class="text-center">In dieser Sektion erzähle ich
+                    <br> welche Interessen ich habe und in welcher Richtung ich Arbeiten möchte</p-->
+                    <div class="text-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zfAwuJJoUhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-center">
+                        <p>Have a look at the fully commented Notebook
+                            <a target="_blank" rel="noopener noreferrer" href = "https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/3125fa4a-ee57-43e0-82e4-a660b2f47f2a/view?access_token=60eaf6a216a233624d9dd9f8f4481cd5474a6f215dab2180073017b40d32e2b5"> here.</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!----------Interessen---------->
+
+            <div class="services" id="services">
+                <div class="container">
+                    <h1 class="text-center">Meine Interessen</h1>
+                    <!--p class="text-center">In dieser Sektion erzähle ich
+                    <br> welche Interessen ich habe und in welcher Richtung ich Arbeiten möchte</p-->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="services-box">
+                                <i class="fa fa-rocket"></i><span>Machine Learning und AI</span>
+                                <p>Unter den großen Mysterien unserer Zeit ist für mich das des menschlichen Verstandes und Bewusstseins am geheimnisvollsten.  Nach dem Motto der Ingenieure “We only understand it if we can build it”, scheint mir künstliche Intelligenz und maschinelles Lernen ein verheißungsvoller und spannender Schritt hin zu dem Verständnis unseres Verstandes.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="services-box">
+                                <i class="fa fa-code"></i><span>Datascience und Dataanalytics</span>
+                                <p>Die Möglichkeit, rohe Daten zu nützlichen Informationen zu aggregieren, aus ihnen Erkenntnisse zu gewinnen und Vorhersagen zu treffen fasziniert mich. Täglich werden über 2,5 Trillionen Bytes an Daten produziert. Diese Daten nutzbar zu machen ist eine spannende Aufgabe.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="services-box">
+                                <i class="fa fa-ravelry"></i><span>Quantum Computing</span>
+                                <p>Um die Herausforderungen unserer Zeit meistern zu können benötigen wir immer stärkere Rechner. Nachdem Jahrzente nur theoretisch auf dem Gebiet Quantum Computing geforscht wurde, haben wir nun endlich die Möglichkeit, diese Theorien nach und nach an realen Quantencomputern zu testen. Jetzt ist der richtige Augenblick um von vorne an dabei zu sein.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!----------Kontakt---------->
+
+            <div class="contact" id="contact">
+                <div class="container text-center">
+                    <h1>Kontaktieren Sie mich</h1>
+                    <p class="text-center">Auf folgenden Wegen können Sie Kontakt mit mir aufnehmen:</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <i></i>
+                            <p></p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa fa-envelope"></i>
+                            <p> n.vietor@gmx.de</p>
+                        </div>
+                    </div>
+                    <a target="_blank" rel="noopener noreferrer" href="/static/docs/Lebenslauf_Vietor.pdf" download target="_blank"><button type="button" class="btn btn-primary"><i class="fa fa-download"></i>Lebenslauf</button></a>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href = 'https://github.com/Nicolas670';" ><i class="fa fa-github"></i>Mein Github</button>
+                </div>
+                <div class="footer text-center">
+                    <!--p>Made by Nicolas Vietor</p-->
+                    <!--span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=JzvuAiZmh1HOkcpiOefOM6QwqLXUQFcqj2pN3OlKi55tvWCTxxJd5DkNyTHH"></script></span-->
+                </div>
+            </div>
+        </section>
+
+        <!----------Scrolling---------->
+        <script src="smooth-scroll.js"></script>
+
+        <script>
+            var scroll = new SmoothScroll('a[href*="#"]');
+        </script>
+
+    </body>
+</html>
+
+{% endblock %}

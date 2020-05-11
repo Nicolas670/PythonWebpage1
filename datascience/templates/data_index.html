@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
 
+<link rel="stylesheet" href="{% static 'style.css' %}", type="text/css" >
 {% block content %}
 <html lang="en">
 <head>
@@ -9,9 +11,17 @@
 <body>
 <ul>
     {% for data in data_list %}
-        <h2>{{ data.title}}</h2>
-    <img src="{{ data.picture.url }}" alt="{{ data.title }}">
+        <div class = "image-feed">
+            <h2>{{ data.title}}</h2>
+            <div class="image-box">
+                <img src="{{ data.picture.url }}" alt="{{ data.title }}">
+            </div>
+        </div>
     {% endfor %}
+
+    <div class="description">
+        <p> This is my description</p>
+    </div>
 </ul>
 </body>
 </html>

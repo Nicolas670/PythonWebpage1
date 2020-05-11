@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<html>
+<head>
+
+</head>
+<body>
+    <section class="header1 heading" id="projects-header">
+        <h1 class="text-center">Meine Projekte</h1>
+    </section>
+
+        <div class="diagonal-area">
+            <div class="box-left quantum-computing">
+                    <!--img src="/static/images/IBM_Q_Experience.png" alt="" class="diagonal-project-img-left"-->
+            </div>
+            <div class="box-right diagonal-text-box">
+                <h2>Quantum Computing</h2>
+                <p>Quantum Computing mit IBM Q-Experience</p>
+            </div>
+        </div>
+
+        <div class="diagonal-area">
+            <div class="box-left diagonal-text-box">
+                <h2>Arduino</h2>
+                <p>Automatische Bewässerung mit Arduino.</p>
+            </div>
+            <div class="box-right arduino">
+                <!--img src="/static/images/Arduino.png" alt="" class="diagonal-project-img-right"-->
+            </div>
+        </div>
+
+        <div class="diagonal-area">
+            <div class="box-left ibm-zertifizierung">
+                    <!--img src="/static/images/ldavis2.png" alt="" class="diagonal-project-img-left"-->
+
+                <div class="ibm-capstone-video diagonal-project-img-left" id="ibm-capstone-video">
+                <div class="container">
+                    <!--h3 class="text-center">Mein IBM Advanced Data Science Capstone Projekt</h3-->
+                    <!--p class="text-center">In dieser Sektion erzähle ich
+                    <br> welche Interessen ich habe und in welcher Richtung ich Arbeiten möchte</p-->
+                    <div class="text-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zfAwuJJoUhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-center">
+                        <!--p>Have a look at the fully commented Notebook
+                            <a target="_blank" rel="noopener noreferrer" href = "https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/3125fa4a-ee57-43e0-82e4-a660b2f47f2a/view?access_token=60eaf6a216a233624d9dd9f8f4481cd5474a6f215dab2180073017b40d32e2b5"> here.</a>
+                        </p-->
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="box-right diagonal-text-box">
+                <h2>IBM Datascience Zertifizierung</h2>
+                <p>IBM Datascience Zertifizierung</p>
+            </div>
+        </div>
+
+        <div class="diagonal-area">
+            <div class="box-left diagonal-text-box">
+                <h2>Webprogrammierung</h2>
+                <p>Um mir die Grundlagen der Webprogrammierung beizubringen habe ich diese Webseite programmiert.</p>
+            </div>
+            <div class="box-right webprogrammierung">
+                <!--img src="/static/images/Webprogrammierung.png" alt="" class="diagonal-project-img-right"-->
+            </div>
+        </div>
+</body>
+</html>
+{% endblock %}
