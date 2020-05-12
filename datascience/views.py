@@ -11,6 +11,9 @@ import PIL
 
 from .forms import UploadForm, UploadTextForm
 
+#Generating IDs:
+import uuid
+
 
 #Data Science libs
 import matplotlib.pyplot as plt
@@ -58,10 +61,14 @@ def upload_wordcloud_text(request):
         form = UploadTextForm(request.POST, request.FILES)
 
         if form.is_valid():
-            new_text = form.save()
-            title = new_text.title
+            id = str(uuid.uuid4())
+            #form.__setattr__("title","hanswurst")
+            new_text = form.save(commit=False)
+            new_text.id = id
+            new_text.save()
+
             #bind title to session to retrieve it after the redirect. The title is needed for finding the correct text doc.
-            request.session["title"] = title
+            request.session["id"] = id
             return redirect(wordcloud)
 
     else:
@@ -89,8 +96,9 @@ def get_model_fields(model):
 
 
 def wordcloud(request):
-    title = request.session.get("title", "")
-    obj = TextUpload.objects.get(title=title)
+
+    id = request.session.get("id", "")
+    obj = TextUpload.objects.get(id=id)
     text_path = obj.text.path
     text_file = open(text_path, "r")
     text = text_file.read()
@@ -123,7 +131,8 @@ def wordcloud(request):
 
     data = text.replace("Nix", "Everything")
     context = {"data": data, "object": obj, "cloud": uri}
-    return render(request, "upload_wordcloud_text.html", context)
+    return render(request, "wordcloud.html", context)
+
 
 def show_projects(request):
     return render(request, "projects.html")

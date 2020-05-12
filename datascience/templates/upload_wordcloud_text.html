@@ -7,29 +7,6 @@
             <meta charset="UTF-8">
         </head>
         <body>
-            <!--section-- class="transparent" id="wordcloud">
-                <div class="wc-header">
-                    <h1>Word cloud Generator</h1>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 padding-left">
-                        <div class="form-box white">
-                            <h5>Wählen Sie ein Textdokument (.txt) aus, aus dem die Wordcloud erstellt werden soll.</h5>
-                            <form class="form" method="post" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                                <button type="submit">Submit your Text</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="box white">
-                            <img src="data:img/png;base64, {{ cloud }}" class="wc-img">
-                        </div>
-                    </div>
-                </div>
-            </section-->
-
             <section class="" id="wordcloud">
                 <div class="wc-header">
                     <h1>Word cloud Generator</h1>
@@ -53,8 +30,8 @@
                                         {{ form.as_p }}
                                         <button type="submit">Submit Your Text</button>
                                     </form>
-
                             </div>
+
 
                     </div>
                 </div>

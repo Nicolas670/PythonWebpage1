@@ -1,26 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<head>
-    <h1>My Wordcloud</h1>
-</head>
 
-<body>
-    <!--div class="row">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+        </head>
+        <body>
+            <section class="" id="wordcloud">
+                <div class="wc-header">
+                    <h1>Word cloud Generator</h1>
+                </div>
+                <div class="text-center">
+                    <div class="box white">
+                        <img src="data:img/png;base64, {{ cloud }}" alt="" class="wc-img">
+                    </div>
+                </div>
+            </section>
+        </body>
+    </html>
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{ cloud }}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{ object.title }}</h5>
-                <p class="card-text"> {{ data }}.</p>
-            </div>
-        </div>
-
-    </div-->
-
-<div class="row">
-    <h3>{{ object.title }}</h3>
-    <img src=" data:img/png;base64, {{ cloud }}" height="500", width="1000" >
-</div>
-</body>
 {% endblock %}
