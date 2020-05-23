@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'datascience.apps.DatascienceConfig',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [
