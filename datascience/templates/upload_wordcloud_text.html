@@ -1,42 +1,92 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-        </head>
-        <body>
-            <section class="" id="wordcloud">
-                <div class="wc-header">
-                    <h1>Word cloud Generator</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<section class="" id="wordcloud">
+    <div class="header-stripe grey big-white">
+        <ul class="fly-in-text">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>D</li>
+            <li>C</li>
+            <li>L</li>
+            <li>O</li>
+            <li>U</li>
+            <li>D</li>
+        </ul>
+    </div>
+</section>
+<section class="code-description">
+    <div class="text-center">
+        <h1 style="padding-bottom: 20px">So funktionierts:</h1>
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img src="/static/images/wordcloud-code.png" class="col-md-6-img zoom code-img shadow" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="description-background">
+                    <h3>Definition:</h3>
+                    <p>Eine Wordcloud stellt die Wörter eines oder mehrerer Texte proportional zur Häufigkeit ihres
+                        Auftreten in besagten Texten dar. Bei einer Vielzahl unbekannter Texte desselben Themengebiets
+                        kann sie so schnell eine hilfreiche, grobe Übersicht über die Inhalte der Texte bieten.</p>
+                    <br>
+                    <h3>Implementierung:</h3>
+                    <p>Das Wordcloud Modul für Python bietet eine simple Implementierung. Es ermöglicht einem unter
+                        anderem die maximale Anzahl der dargestellten Wörter, sowie ihre maximale Grö0e festzulegen.
+                        <br>Die Wordcloud selber wird mit Hilfe einer Matplotlib Leinwand dargestellt. Anschließend kann
+                        sie auch als Bild gespeichert werden, um sie beispielsweise interaktiv auf einer Webseite
+                        darzustellen.</p>
                 </div>
-                <div class="text-center">
-                    <div class="box white">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="tool-tryout">
+    <div class="container text-center">
+        <h1>Versuchen Sie es:</h1>
+        <p>Schreiben oder kopieren Sie einen beliebigen Text in das Textfeld um daraus eine Wordcloud erstellen zu lassen.</p>
+        <form id="wc-form" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="mdl-textfield mdl-js-textfield">
+                <input type="text" class="mdl-textfield_input" id="text">
+                <label for="text" class="mdl-textfield_label">Text:</label>
+                <span class="mdl-textfield_error"></span>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div class="" id="wc-output"></div>
+    </div>
+</section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}"></script-->
+<script type="text/javascript">
+    $(document).on('submit','#wc-form',function(event){
+        event.preventDefault();
 
-                            <div class="row text-center">
+        $.ajax({
+                data: {'text':$('#text').val(),'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val()}, // get the form data
+                type: $(this).attr('method'), // GET or POST
+                url: $(this).attr('action'), // the file to call
 
-                                <!--input type="file" id="input-file-now" class="file-upload" />
-                                <button onclick="catch_file()">Submit</button>
+                success: function(data) { // on success..
+                    //alert("Created new User!");  update the DIV
+                    //$('#wc-output').html(text); // update the DIV
+                    //$("#wc-output").html('<h1>{{' data.title '}} </h1>')
+                    //$("#wc-output").html('<p> {{text}} </p>')
+                    $('#wc-output').html('<img src="data:img/png;base64,'+data.cloud+'" style="height: 400px; width: auto">');
 
-                                <script>
-                                    function catch_file(){
-                                        var x = document.getElementById("input-file-new");
-                                        x.disabled = true;
-                                        }
-                                </script-->
-                                    <form class="form" method="post" enctype="multipart/form-data">
-                                        {% csrf_token %}
-                                        {{ form.as_p }}
-                                        <button type="submit">Submit Your Text</button>
-                                    </form>
-                            </div>
+                }
+        });
+    });
 
-
-                    </div>
-                </div>
-            </section>
-        </body>
-    </html>
+</script>
+</html>
 
 {% endblock %}

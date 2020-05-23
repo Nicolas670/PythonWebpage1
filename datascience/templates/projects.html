@@ -8,59 +8,157 @@
 </head>
 <body>
     <section class="header1 heading" id="projects-header">
-        <h1 class="text-center">Meine Projekte</h1>
+        <ul class="fly-in-text hidden">
+            <li>P</li>
+            <li>R</li>
+            <li>O</li>
+            <li>J</li>
+            <li>E</li>
+            <li>K</li>
+            <li>T</li>
+            <li>E</li>
+        </ul>
     </section>
 
         <div class="diagonal-area">
-            <div class="box-left quantum-computing">
+            <div class="picture-box-left quantum-computing">
                     <!--img src="/static/images/IBM_Q_Experience.png" alt="" class="diagonal-project-img-left"-->
             </div>
-            <div class="box-right diagonal-text-box">
-                <h2>Quantum Computing</h2>
-                <p>Quantum Computing mit IBM Q-Experience</p>
-            </div>
-        </div>
-
-        <div class="diagonal-area">
-            <div class="box-left diagonal-text-box">
-                <h2>IBM Datascience Zertifizierung</h2>
-                <p>IBM Datascience Zertifizierung</p>
-            </div>
-            <div class="box-right ibm-zertifizierung">
-                <div class="ibm-capstone-video diagonal-project-video-right" id="ibm-capstone-video">
-                    <div class="container">
-                        <!--h3 class="text-center">Mein IBM Advanced Data Science Capstone Projekt</h3-->
-                        <!--p class="text-center">In dieser Sektion erzähle ich
-                        <br> welche Interessen ich habe und in welcher Richtung ich Arbeiten möchte</p-->
-                        <div class="text-center">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/zfAwuJJoUhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
+            <div class="text-box-right diagonal-text-box">
+                <div class="project-card-right">
+                    <h2 class="card-title">Quantum Computing</h2>
+                    <img src="/static/images/IBM_Q_Experience.png" alt="" class="project-card-img">
+                    <p class="card-text">
+                        IBM Q-Experience bietet einem die Möglichkeit Quantenschaltkreise per drag and drop zu erstellen und diese dann von simulierten oder realen Quanten Computern durchführen zu lassen. Als nächstes werde ich Qiskit, welches es einem erlaubt Quanten Computer in Python zu programmieren, ausprobieren.
+                        <br>
+                        <br>
+                        <b>Status </b>- abgeschlossen <br>
+                        <b>Zeitraum </b>- Juli - August 2019 <br>
+                        <b>Erlerntes </b>- Grundlegendes Verstädnis für Quantencomputer
+                    </p>
                 </div>
             </div>
         </div>
 
         <div class="diagonal-area">
-            <div class="box-left arduino">
-                    <!--img src="/static/images/ldavis2.png" alt="" class="diagonal-project-img-left"-->
-
-
+            <div class="text-box-left diagonal-text-box">
+                    <div class="project-card-left">
+                        <h2 class="card-title">IBM Advanced Datascientist</h2>
+                        <img src="/static/images/ldavis.png" alt="" class="project-card-img">
+                        <p class="card-text">
+                            With this course, following the profssional Datascience Certificate I gained a deep understanding on massive parallel data processing, data exploration and visualization, and advanced machine learning and deep learning. I now understand the mathematical foundations behind all algorithms. I feel confident to apply my knowledge in practical use cases, justify architectural decisions, and understands the characteristics of different algorithms, frameworks, technologies and how they impact model performance and scalability.
+                            <br>
+                            <br>
+                            <b>Status </b>- abgeschlossen <br>
+                            <b>Zeitraum </b>- März - April 2020 <br>
+                            <b>Erlerntes </b>- Data Science, Big Data
+                        </p>
+                    </div>
+                    <!-- Button trigger modal -->
+                <div class="btn-collapsible-project">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ibm-advanced-datascience-weiterlesen">
+                      Weiterlesen
+                    </button>
+                </div>
             </div>
-            <div class="box-right diagonal-text-box">
-                <h2>Smart Garden</h2>
-                <p>Automatische Bewässerung mit Arduino.</p>
+            <div class="picture-box-right ibm-zertifizierung">
+                <!--div class="ibm-capstone-video diagonal-project-video-right" id="ibm-capstone-video">
+                    <div class="container">
+                        <-h3 class="text-center">Mein IBM Advanced Data Science Capstone Projekt</h3>
+                        <div class="text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/zfAwuJJoUhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div-->
+            </div>
+        </div>
+                    <!-- Modal -->
+                    <div class="modal fade bd-example-modal-lg" id="ibm-advanced-datascience-weiterlesen" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="exampleModalLongTitle">IBM Advanced Data Science Capstone Projekt</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                          </div>
+                          <div class="modal-body">
+                              <img src="/static/images/ldavis.png" class="modal-img zoom" alt="">
+                              <p>Als Abschluss- / Capstoneprojekt des IBM Advanced Datascience Kurses sollte sich jeder Teilnehmer einen Datensatz aussuchen, Fragestellungen aufstellen und versuchen diese mit einem passenden Machine- oder Deeplearning Algorithmus zu beantworten.</p>
+                              <h4>Der Datensatz</h4>
+                              <figure>
+                                  <figcaption class="modal-fig">
+                                      <img src="/static/images/kaggle_covid19.png" alt="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge" class="modal-img zoom">
+                                      <a target="_blank" rel="noopener noreferrer" href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge">Quelle: Kaggle</a>
+                                  </figcaption>
+                              </figure>
+                              <h4>Aufgabenstellung</h4>
+                              <p>Als Ziel setzte ich mir die Datensätze in Themen zu gliedern, um sie leichter durchsuchbar zu machen.</p>
+                              <h4>Die Angewandten Techniken</h4>
+                              <h5>1. Datenextraktion</h5>
+                              <p>Der Datensatz wurde zum größten Teil im Json Format zur verfügung gestellt. Meine erste Aufgabe war es daher, die Daten zu extrahieren, in einem Pandas Dataframe zusammenzuführen und als csv-Datei abzuspeichern.</p>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/kaggle_covid19_dataextraction.png" alt="" class="modal-img zoom">
+                              </figure>
+                              <h5>2. Removing Stopwords and Building n-grams</h5>
+                              <p>Before the Model (I chose the Latent Dirichlet Allocation) can deduce the topics one first has to remove the stopwordsand build n-grams. Stopwords are words that add no extra information, hence they can be removed without lessening the information content.
+                                  <br>First all texts have to be forged into a single list. Then, with the gensim library, Punctuation and first fill words can be removed:</p>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/kaggle-covid19-stopwords1.png" class="modal-img zoom" alt="">
+                              </figure>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+        <div class="diagonal-area row">
+            <div class="picture-box-left arduino">
+                    <!--img src="/static/images/ldavis2.png" alt="" class="diagonal-project-img-left"-->
+            </div>
+            <div class="text-box-right diagonal-text-box">
+                <div class="project-card-right">
+                    <h2 class="card-title">Smart Garden</h2>
+                    <img src="/static/images/Arduino.png" alt="" class="project-card-img">
+                    <p class="card-text">
+                        Zur automatischen Bewässerung meiner Pflanzen stattete ich ihre Töpfe mit Feuchtigkeitssensoren aus
+                        und regle die individuelle Bewässerung über ein Arduino, sowie mehrere Pumpen.
+                        Geplant ist zudem eine Art Gewächshaus für Zöglinge, in dem die Temperatur ebenso über das Arduino gesteuert wird.
+                        <br>
+                        <br>
+                        <b>Status </b>- partiell abgeschlossen <br>
+                        <b>Zeitraum </b>- August 2019 <br>
+                        <b>Erlerntes </b>- Micorcontroller Programmierung
+                    </p>
+                </div>
             </div>
         </div>
 
         <div class="diagonal-area">
-            <div class="box-left diagonal-text-box">
-                <h2>Webprogrammierung</h2>
-                <p>Um mir die Grundlagen der Webprogrammierung beizubringen habe ich diese Webseite programmiert.</p>
+            <div class="text-box-left diagonal-text-box">
+                <div class="project-card-left">
+                        <h2 class="card-title">Webprogrammierung</h2>
+                        <img src="/static/images/Webprogrammierung2.png" alt="" class="project-card-img">
+                        <p class="card-text">
+                            Um mir die Grundlagen der Webprogrammierung beizubringen programmierte ich mir eine eigene Webseite.
+                            <br>
+                            Damit ich der Webseite Funktionalitäten, wie etwa interaktive Data Science Tools, hinzufügen kann, entwickelte ich sie von einer HTML und CSS basierten
+                            Webseite, hin zu einer Django basierten. <br>
+                            Besonders der kreative Prozess gepaart mit den Data Science Aspekten bereitet mir Freude.
+                            Dieses Projekt ist ein laufender Prozess für mich, in dem ich der Webseite nach und nach neue Data Science Tools hinzufüge.
+                            Und so befindet sich die Webseite im stetigen Wandel.
+                            <br>
+                            <br>
+                            <b>Status </b>- fortlaufend <br>
+                            <b>Zeitraum </b>- März - heute 2020 <br>
+                            <b>Erlerntes </b>- HTML, CSS, JavaScript, Jquery, Python
+                        </p>
+                    </div>
             </div>
-            <div class="box-right webprogrammierung">
+            <div class="picture-box-right webprogrammierung">
                 <!--img src="/static/images/Webprogrammierung.png" alt="" class="diagonal-project-img-right"-->
             </div>
         </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="{% static 'js/rango-jquery.js' %}"></script>
 </body>
 </html>
 {% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section class="header1" id="folium">
+    <ul class="fly-in-text hidden">
+        <li>F</li>
+        <li>O</li>
+        <li>L</li>
+        <li>I</li>
+        <li>U</li>
+        <li>M</li>
+    </ul>
+
+</section>
+<section class="code-description">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <img src="/static/images/folium-code.png" alt="" class="col-md-6-img shadow zoom code-img">
+        </div>
+        <div class="col-md-6">
+            <div class="description-background">
+                <h3>Definition</h3>
+                <p>Folium erlaubt es einem interaktive Karten mit Python darzustellen. Diesen Karten können beliebig Markierungen hinzugefügt werden</p>
+                <h3>Implementierung</h3>
+                <p>mithilfe von GeoPy lassen sich zunächst die Koordinaten für eine Lokation bestimmen. Diese werden anschließend and folium.Map übergeben um die Interaktive Karte zu erstellen.
+                Anschließend können die Marker hinzugefügt werden.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="tool-tryout">
+    <div class="text-center">
+        <form id="folium-form" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="mdl-textfield mdl-js-textfield">
+                <input type="text" class="mdl-textfield_input" id="text">
+                <label for="text" class="mdl-textfield_label">Text:</label>
+                <span class="mdl-textfield_error"></span>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="folium-map text-center">
+        <div class="text-center" id="folium-output"></div>
+    </div>
+</section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}"></script-->
+<script type="text/javascript">
+    $(document).on('submit','#folium-form',function(e){
+        e.preventDefault();
+
+        $.ajax({
+                data: {'text':$('#text').val(),'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val()}, // get the form data
+                type: $(this).attr('method'), // GET or POST
+                url: $(this).attr('action'), // the file to call
+                success: function(data) { // on success..
+                    //alert("Created new User!");  update the DIV
+                    $('#folium-output').html(data);
+                }
+        });
+    });
+</script>
+</html>
+{% endblock %}

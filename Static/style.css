@@ -377,8 +377,188 @@ body
     color: #fff;
     padding-top: 10px;
 }
+/*---------------------------- Cards ----------------------------*/
+.project-card-img{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
 
+.project-card-right{
+    padding-left: 55%;
+    padding-top: 10vh;
+    align: auto;
+    text-align: left;
+    width: 90%;
+    }
+
+.project-card-left{
+    padding-top: 10vh;
+    padding-left: 5%;
+    text-align: left;
+    align: auto;
+    width: 40%;
+    }
+
+.card-img-med{
+    height: 30vh;
+    width: auto;
+    margin: auto;
+    position:center;
+    }
+
+.w-90{
+    width: 90%;}
+
+/*---------------------------- Zoom ----------------------------*/
+
+.zoom{
+    transition: transform: 1.2s;
+    }
+
+.zoom:hover{
+    transform: scale(1.55);
+    }
+
+.zoom-hover{
+    overflow: hidden;
+    }
+.zoom-hover img{
+    transition: all 0.5s ease;
+    }
+
+.zoom-hover:hover img{
+    transform:scale(1.25);
+    }
+/*---------------------------- Modal ----------------------------*/
+
+.btn-collapsible-project{
+    padding-top: 20px;
+    padding-left: 10%;
+    }
+
+.modal-img{
+    width: 80vh;
+    height: auto;
+    }
+.modal-fig{
+    padding-bottom: 20px;
+    }
+
+/*---------------------------- Fly in Text Scatter ----------------------------*/
+.fly-in-text{
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    white-space: nowrap;
+    }
+
+.fly-in-text li{
+    display: inline-block;
+    margin-right: 40px;
+    font-family: Open Sans, Arial;
+    font-weight: 300;
+    font-size: 4em;
+    transition: all 2.5s ease;
+    opacity: 1;
+    }
+
+.fly-in-text li:last-child{
+    margin-right:0;}
+
+.fly-in-text.hidden li{
+    opacity:0;
+    }
+
+.fly-in-text.hidden li:nth-child(1) {transform: translateX(-200px) translateY(-200px);}
+.fly-in-text.hidden li:nth-child(2) {transform: translateX(20px) translateY(100px);}
+.fly-in-text.hidden li:nth-child(3) {transform: translateX(-150px) translateY(-80px);}
+.fly-in-text.hidden li:nth-child(4) {transform: translateX(10px) translateY(80px);}
+.fly-in-text.hidden li:nth-child(5) {transform: translateX(200px) translateY(140px);}
+.fly-in-text.hidden li:nth-child(6) {transform: translateX(-320px) translateY(-260px);}
+.fly-in-text.hidden li:nth-child(7) {transform: translateX(-120px) translateY(-100px);}
+.fly-in-text.hidden li:nth-child(8) {transform: translateX(130px) translateY(160px);}
+
+/*---------------------------- Fly in Text top/down ----------------------------*/
+.fly-in-text-td{
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    white-space: nowrap;
+    }
+
+.fly-in-text-td li{
+    display: inline-block;
+    margin-right: 40px;
+    font-family: Open Sans, Arial;
+    font-weight: 300;
+    font-size: 4em;
+    transition: all 2.5s ease;
+    opacity: 1;
+    }
+
+.fly-in-text-td li:last-child{
+    margin-right:0;}
+
+.fly-in-text-td.hidden li{
+    opacity:0;
+    }
+
+.fly-in-text-td.hidden li:nth-child(1) {transform: translateX(0px) translateY(-200px);}
+.fly-in-text-td.hidden li:nth-child(2) {transform: translateX(0px) translateY(-200px);}
+.fly-in-text-td.hidden li:nth-child(3) {transform: translateX(0px) translateY(-200px);}
+.fly-in-text-td.hidden li:nth-child(4) {transform: translateX(0px) translateY(-200px);}
+.fly-in-text-td.hidden li:nth-child(5) {transform: translateX(0px) translateY(200px);}
+.fly-in-text-td.hidden li:nth-child(6) {transform: translateX(0px) translateY(200px);}
+.fly-in-text-td.hidden li:nth-child(7) {transform: translateX(0px) translateY(200px);}
+.fly-in-text-td.hidden li:nth-child(8) {transform: translateX(0px) translateY(200px);}
+.fly-in-text-td.hidden li:nth-child(9) {transform: translateX(0px) translateY(200px);}
+.fly-in-text-td.hidden li:nth-child(10) {transform: translateX(0px) translateY(200px);}
+
+.big-white{
+
+    color: #fff;
+    }
 /*---------------------------- Global ----------------------------*/
+#folium{
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("/static/images/earth.png");}
+
+.folium-map{
+    width: 80%;
+    margin: auto;
+}
+
+#datascience-header{
+    background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("/static/images/nepal-mountains.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;}
+
+.tool-cards{
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    }
+
+.space-50{
+    padding-bottom: 50px;}
+
+.header-stripe{
+    height: 20vh;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    }
+
+.grey{
+    background: #1C2833;}
+
 .font-white{
     color: #fff;
     font-weight: bold:
@@ -403,11 +583,12 @@ body
 
 .white{
     background: #fff;
+    color: #fff;
     }
 
 .form{
-    padding-left:50vh;
-    padding-top: 30vh;
+    /*padding-left:10vh;
+    padding-top: 10vh;*/
     align:auto;
     }
 
@@ -428,25 +609,39 @@ body
 .diagonal-area {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
-.box-left, .box-right {
+.picture-box-left, .picture-box-right, box-left, box-right {
   position: absolute;
-  width: 65%;
+  width: 100%;
     height:100vh;
 }
-.box-left {
+
+.picture-box-left {
   left: 0;
   top: 0;
-  -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 55% 0%, 30% 100%, 0% 100%);
+  clip-path: polygon(0 0, 55% 0%, 30% 100%, 0% 100%);
 }
-.box-right {
+
+.text-box-right{
+  -webkit-clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 30% 100%);
+  clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 30% 100%);
+}
+
+.picture-box-right {
   right: 0;
   top: 0;
-  -webkit-clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
-  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(45% 0, 100% 0%, 100% 100%, 70% 100%);
+  clip-path: polygon(45% 0, 100% 0%, 100% 100%, 70% 100%);
   text-align: right;
+}
+
+.text-box-left {
+  left: 0;
+  top: 0;
+  -webkit-clip-path: polygon(0 0, 45% 0%, 70% 100%, 0% 100%);
+  clip-path: polygon(0 0, 45% 0%, 70% 100%, 0% 100%);
 }
 
 .quantum-computing{
@@ -455,25 +650,21 @@ body
     background-repeat: no-repeat;
 }
 .arduino{
-    background: url("/static/images/nepal-blue-hutt.jpg");
-    background-size: cover;
+    background: url("/static/images/gartenhäuschen1.jpg");
+    background-size: 70%;
     background-repeat: no-repeat;
 }
 .ibm-zertifizierung{
-    background: url("/static/images/Hintergrund.jpg");
+    background: url("/static/images/nepal-larkee-pass.jpg");
     background-size: cover;
+    padding-left. 50%;
     background-repeat: no-repeat;
 }
 .webprogrammierung{
     background: url("/static/images/Webprogrammierung.png");
-    background-size: cover%;
+    background-size: cover;
     background-repeat: no-repeat;
 }
-
-.diagonal-text-box{
-    padding-right: 10px;
-    padding-left: 10px;
-    }
 
 .diagonal-project-img-left{
     padding-top: 20vh;
@@ -500,17 +691,28 @@ body
   background-color: grey;
   opacity: 0.85;
     }
+
+.project-header-right{
+    padding-right: 50px;
+
+    }
+
+.col-md-6-img{
+    width: 70%;
+    }
 /*----------------------------NLP - Wordcloud----------------------------*/
 
 #wordcloud{
     height: 100vh;
     width: 100%;
-    background:linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("/static/images/wordcloud.png");
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("/static/images/wordcloud.png");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
-
+.center-img{
+    margin: auto;
+    }
 .wc-img{
     width: 100%;
     height: auto;}
@@ -526,6 +728,33 @@ body
     text-align: center;
     }
 
+.code-description{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    }
+
+.tool-tryout{
+    background-color: #f5f5f5;
+    height: 100vh;
+    }
+
+.code-img {
+  -webkit-border-radius: 10px;
+}
+
+.description-background{
+  height: 80%;
+  position: relative;
+  /*border: 3px solid black;*/
+  /*background-color: #F8F9F9;*/
+  margin: 0;
+  position: absolute;
+    top: 50%;
+    right: 10vh;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: left;
+    }
  /*----------------------------Projects----------------------------*/
 #projects-header{
         background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("/static/images/nepal-hiking.jpg");

@@ -7,33 +7,66 @@
 </head>
 <body>
 
-    <section id="header">
-
-        <div class="container text-center">
-            <div class="topic-header">
-                <h1>Natural Language Processing</h1>
+<section id="datascience-header">
+    <ul class="fly-in-text-td hidden">
+        <li>D</li>
+        <li>A</li>
+        <li>T</li>
+        <li>A</li>
+        <li>S</li>
+        <li>I</li>
+        <li>E</li>
+        <li>N</li>
+        <li>C</li>
+        <li>E</li>
+    </ul>
+</section>
+<div class="container">
+    <p class="text-center">
+        Diesen Abschnitt habe ich dazu genutzt die Machinelearning Algorithmen und Datascience Tools, die ich in meinen Projekten gelernt und angewand habe,
+        <br> interaktiv bereitzustellen. Dies hat den Zweck das Erlernte vorstellen zu können und bietet mir zugleich die Möglichkeit tiefer in die Integration
+        <br>von Python und Webdevelopement einzusteigen.
+    </p>
+</div>
+<div class="tool-cards">
+    <div class="row space-50">
+        <div class="card-deck ">
+            <div class="card shadow">
+                <div class="zoom-hover">
+                    <img src="/static/images/wordcloud.png" alt="" class="card-img-top">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Word Clouds</h4>
+                    <p class="card-text">A Word Cloud displays the most frequent words of a text / many text documents.
+                        The more often a word occurs in a given text the bigger it is displayed.</p>
+                    <a href="{% url 'upload_wordcloud_text' %}" class="btn btn-primary">Try it out.</a>
+                </div>
             </div>
-            <div class="row">
-                    <div class="col-md-6 " id="nlp-wordcloud">
-                        <div class="card">
-                            <img src="/static/images/wordcloud.png" alt="" class="card-img-top">
-                            <h4 class="card-title">Word Clouds</h4>
-                            <p class="card-text">A Word Cloud displays the most frequent words of a text / many text documents. The more often a word occurs in a given text the bigger it is displayed.</p>
-                            <a href="{% url 'upload_wordcloud_text' %}" class="btn btn-primary">Try it out.</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6" id="nlp-lda">
-                        <div class="card">
-                            <img src="/static/images/ldavis.png" alt="" class="card-img-top">
-                            <h4 class="card-title">Topic Modelling LDA</h4>
-                            <p class="card-text">Topic Modelling deduces topics from a collection of texts. It belongs to the category of unsupervised Machine Learning Algorithms.</p>
-                            <a href="{% url 'nlp' %}" class="btn btn-primary">Try it out.</a>
-                        </div>
-                    </div>
+            <div class="card shadow">
+                <div class="zoom-hover">
+                    <img src="/static/images/ldavis.png" alt="" class="card-img-top">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Topic Modelling with LDA</h4>
+                    <p class="card-text">Topic Modelling deduces topics from a collection of texts. It belongs to the
+                        category of unsupervised Machine Learning Algorithms.</p>
+                    <a href="{% url 'lda' %}" class="btn btn-primary">Try it out.</a>
+                </div>
             </div>
-        </div>
-    </section>
-
+                <div class="card shadow" style="width: 90%">
+                    <div class="zoom-hover">
+                        <img src="/static/images/folium-map.png" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Folium Map</h4>
+                        <p class="card-text">Folium is a handy library that creates interactive maps. To these maps one can add marker for
+                        facilities or other places.</p>
+                        <a href="{% url 'folium' %}" class="btn btn-primary">Try it out.</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
 </body>
 
 

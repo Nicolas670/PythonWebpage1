@@ -6,13 +6,13 @@ from .views import CreateView
 
 urlpatterns = [
     path("", views.index, name="home"),
-    path("nlp", views.nlp, name="nlp"),
+    path("tools", views.datascience, name="datascience"),
     path("picture", views.picture, name="data_picture"),
     path("post/", views.data_upload, name="add_post"),
     path("display", views.show_pictures, name="display"),
-    path("nlp/wordcloud", views.upload_wordcloud_text, name="upload_wordcloud_text"),
-    path("display/wordcloud", views.wordcloud, name="wordcloud"),
+    path("tools/wordcloud", views.upload_wordcloud_text, name="upload_wordcloud_text"),
     path("projekte", views.show_projects, name="projects"),
+    path("tools/folium", views.create_folium_map, name="folium"),
 
 
 ]
