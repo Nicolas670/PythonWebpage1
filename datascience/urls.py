@@ -13,6 +13,7 @@ urlpatterns = [
     path("tools/wordcloud", views.upload_wordcloud_text, name="upload_wordcloud_text"),
     path("projekte", views.show_projects, name="projects"),
     path("tools/folium", views.create_folium_map, name="folium"),
+    path("tools/topicModelling", views.topic_modelling, name="topic_modelling"),
 
 
 ]

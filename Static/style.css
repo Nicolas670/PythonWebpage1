@@ -524,6 +524,15 @@ body
     color: #fff;
     }
 /*---------------------------- Global ----------------------------*/
+.mid-col{
+    width: 80%;
+    margin: 0 auto;
+}
+.block{
+    text-align: justify;
+}
+#topic_modelling{
+    background-color: #fff;}
 #folium{
     background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("/static/images/earth.png");}
 

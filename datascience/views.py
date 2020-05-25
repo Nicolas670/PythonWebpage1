@@ -39,6 +39,8 @@ def index(request):
 def datascience(request):
     return render(request, "dataindex.html")
 
+def topic_modelling(request):
+    return render(request, "topic_modelling.html")
 
 def create_folium_map(request):
 
