@@ -51,7 +51,7 @@
                             <br>
                             <b>Status </b>- abgeschlossen <br>
                             <b>Zeitraum </b>- März - April 2020 <br>
-                            <b>Erlerntes </b>- Data Science, Big Data
+                            <b>Erlerntes </b>- NLP, Apache Spark, Anomaly Detection
                         </p>
                     </div>
                     <!-- Button trigger modal -->
@@ -83,8 +83,12 @@
                                 </button>
                           </div>
                           <div class="modal-body">
-                              <img src="/static/images/ldavis.png" class="modal-img zoom" alt="">
+                              <figure class="modal-fig text-center">
+                                  <iframe width="560" height="315" src="https://www.youtube.com/embed/zfAwuJJoUhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                              </figure>
+
                               <p>Als Abschluss- / Capstoneprojekt des IBM Advanced Datascience Kurses sollte sich jeder Teilnehmer einen Datensatz aussuchen, Fragestellungen aufstellen und versuchen diese mit einem passenden Machine- oder Deeplearning Algorithmus zu beantworten.</p>
+                              <br>
                               <h4>Der Datensatz</h4>
                               <figure>
                                   <figcaption class="modal-fig">
@@ -92,20 +96,136 @@
                                       <a target="_blank" rel="noopener noreferrer" href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge">Quelle: Kaggle</a>
                                   </figcaption>
                               </figure>
+                              <p>
+                                  Als Datensatz wählte ich den, vom Weißen Haus und Forschungszentren veröffentlichten, COVID-19 Datensatz. Er stellt eine umfassende Sammlung
+                                  wissenschaftlicher Paper, zu den Themen COVID-19, SARS-COV-2 und verwandte Coronaviren dar.
+                              </p>
+                              <br>
+                              <br>
                               <h4>Aufgabenstellung</h4>
                               <p>Als Ziel setzte ich mir die Datensätze in Themen zu gliedern, um sie leichter durchsuchbar zu machen.</p>
+                              <br>
                               <h4>Die Angewandten Techniken</h4>
+                              <br>
                               <h5>1. Datenextraktion</h5>
                               <p>Der Datensatz wurde zum größten Teil im Json Format zur verfügung gestellt. Meine erste Aufgabe war es daher, die Daten zu extrahieren, in einem Pandas Dataframe zusammenzuführen und als csv-Datei abzuspeichern.</p>
                               <figure class="modal-fig">
                                   <img src="/static/images/kaggle_covid19_dataextraction.png" alt="" class="modal-img zoom">
                               </figure>
-                              <h5>2. Removing Stopwords and Building n-grams</h5>
-                              <p>Before the Model (I chose the Latent Dirichlet Allocation) can deduce the topics one first has to remove the stopwordsand build n-grams. Stopwords are words that add no extra information, hence they can be removed without lessening the information content.
-                                  <br>First all texts have to be forged into a single list. Then, with the gensim library, Punctuation and first fill words can be removed:</p>
+                              <h5>2. Stoppwörter, n-Gramme und Lemmatisierung</h5>
+                              <p>
+                                  Bevor das Model Themen aus den Texten ableiten kann, müssen Stoppwörter entfernt und die restlichen Texte zu Bi- und Trigramme
+                                  zusammengefasst werden.
+                              </p>
+                              <p>
+                                  <b>Stoppwörter:</b>
+                                  <br>
+                                  Als Stopwörter werden Füllwörter bezeichnet, die entfernt werden können ohne den Informationsgehalt des Textes zu mindern.
+                                  Beispiele sind: 'wie', 'als', 'und' etc... Um die Stoppwörter zu entfernen werden zunächst sämtliche Texte in einer Liste zusammengefasst.
+                                  Aanschließend werden, unter Zuhilfenahme von Gensim, die Stoppwörter, sowie Satzzeichen entfernt:
+                                  <br>
+                              </p>
                               <figure class="modal-fig">
                                   <img src="/static/images/kaggle-covid19-stopwords1.png" class="modal-img zoom" alt="">
                               </figure>
+                              <p>
+                                  <b>N-Gramme:</b>
+                                  <br>
+                                  Um den Umfang der Texte weiter zu reduzieren, fasst man nun Sätze zu Wortpaaren, bestehend aus zwei, bzw. drei häufig zusammen auftretenden Worten, zusammen:
+                              </p>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/N-Grams.png" class="modal-img zoom" alt="">
+                              </figure>
+                              <p>
+                                  <b>Lemmatisierung:</b>
+                                  <br>
+                                  Im letzten Schritt werden alle Wörter, die weder Nomen,noch Adjektive, Adverben oder Verben sind, aus dem verbliebenen Text entfernt:
+                              </p>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/kaggle-covid19-lemmatiziation.png" class="modal-img zoom" alt="">
+                              </figure>
+                              <h5>3. Topic Modelling</h5>
+                              <p>
+                                  Der Algorithmus meiner Wahl, für das Topic Modelling, war die Latent Dirichlet Allocation, kurz LDA.
+                              </p>
+                              <p>
+                                  <b>Definition:</b>
+                                  <br>
+                                  Die Dirichlet Verteilungen bilden eine Familie der fortlaufenden, multivariablen Wahrscheinlichkeitsverteilungen.
+                                  Im Gegensatz zuuUnivariablen Verteilungen, berücksichtigen sie mehrere Variablen zur gleichen Zeit.
+                                  LDA fasst Dokumente zu häufig in Ihnen aufkommenden Worten zusammen und versucht dadurch auf Ähnlichkeiten zwischen den Dokumenten zu schließen.
+                                  Um die Verbindungen zwischen den Dokumenten zu reduzieren nutzt LDA eine versteckte (latent) Schicht. Daher der Name Latent Dirichlet Allocation.
+                                  Diese versteckte Schicht sind die Themengebiete, anhand derer die Texte kategorisiert werden.
+                              </p>
+                              <p>
+                                  <b>Dictionary und Corpus:</b>
+                                  <br>
+                                  Als Eingabeparameter nimmt die LDA ein Dictionary und einen Corpus entgegen.
+                                  Das Dictionary weißt jedem Wort eine ID zu. Der Corpus weißt textweise, jedem Wort die jeweilige ID und Häufigkeit zu.
+                                  Das Ergebnis ist ein Tupel, bestehend aus 1. ID und 2. Häufigkeit für jedes Wort pro Text:
+                              </p>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/kaggle-covid19-lda-dict-corpus.png" class="modal-img zoom" alt="">
+                              </figure>
+                              <p>
+                                  <b>Modellierung:</b>
+                                  <br>
+                                  Nach der Vorbereitung müssen lediglich Dictionary und Corpus an das Modell übergeben, und einzelne Parameter gestimmt werden.
+                                  Die Modellierung selber dauert recht lange, die Texte waren jedoch auch umfangreich:
+                              </p>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/kaggle-covid19-lda-modell.png" class="modal-img zoom" alt="">
+                              </figure>
+                              <p>
+                                  <b>Ergebnis:</b>
+                                  <br>
+                                  Das Ergebnis ist eine prozentuale Zuweisung der gefundenen Themengebiete zu jedem Text:
+                              </p>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/kaggle-covid19-lda-modell-result.png" class="modal-img zoom" alt="">
+                              </figure>
+                              <p>
+                                  <b>Visualisierung:</b>
+                                  <br>
+                                  Mit PyLDAVis kann das Ergebnis sehr schön interaktiv visualisiert werden:
+                                  <br>
+                                  (Die interaktive Version finden Sie <a href="{% url 'topic_modelling' %}">hier</a>.)
+                              </p>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/ldavis.png" class="modal-img zoom" alt="">
+                              </figure>
+                              <br>
+                              <h4>Zusammenfassung</h4>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <b>Angewandte Techniken:</b>
+                                          <ul>
+                                              <li>Json zu Pandas DF Konvertierung</li>
+                                              <li>Stoppwörter entfernen</li>
+                                              <li>N-Gramme bilden</li>
+                                              <li>Lemmatisierung</li>
+                                              <li>Topic Modelling mit LDA</li>
+                                              <li>Visualisierung mit PyLDAVis</li>
+                                          </ul>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <b>Verwendete Bibliotheken (Auswahl):</b>
+                                          <ul>
+                                              <li>Gensim</li>
+                                              <li>nltk</li>
+                                              <li>Pandas</li>
+                                              <li>PyLDAVis</li>
+                                          </ul>
+                                  </div>
+                              </div>
+                              <br>
+                              <b>Zertifikat:</b>
+                              <figure class="modal-fig">
+                                  <img src="/static/images/ibm-advanced-ds-zertifikat1.png" class="modal-img zoom" alt="">
+                              </figure>
+                              <p>
+                                  <a href="https://github.com/Nicolas670/IBM-Data-Science/blob/master/Kaggle%20-%20IBM_Cord_19.ipynb">Hier</a> gehts zum vollständigen Notebook auf Github.
+                              </p>
                           </div>
                         </div>
                       </div>

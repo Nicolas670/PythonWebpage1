@@ -21,7 +21,7 @@ from django import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls, name="admin"),
-    path("datascience/", include("datascience.urls"), name="data_home"),
+    path("", include("datascience.urls"), name="data_home"),
     path('api/', include("rest_framework.urls")),
 
 ]

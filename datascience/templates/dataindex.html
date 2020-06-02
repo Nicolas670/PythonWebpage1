@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -22,24 +25,61 @@
     </ul>
 </section>
 <div class="container">
-    <p class="text-center">
+    <p class="text-center block">
         Diesen Abschnitt nutze ich dazu, die Machinelearning Algorithmen und Datascience Tools, die ich in meinen Projekten gelernt und angewand habe,
         <br> interaktiv bereitzustellen. Dies hat den Zweck das Erlernte vorstellen zu können und bietet mir zugleich die Möglichkeit tiefer in die Integration
         <br>von Python und Webdevelopement einzusteigen.
+    <hr style="width: 50%, text-align: center">
     </p>
 </div>
-<div class="tool-cards">
-    <div class="row space-50">
-        <div class="card-deck ">
+<div class="container text-center" id="tool-menue">
+    <div class="row">
+        <div class="col-md-3">
+            <p>
+                <b data-toggle="collapse" data-target="#nlp-tools">NLP</b>
+            </p>
+        </div>
+            <div class="col-md-3">
+            <p>
+                <b data-toggle="collapse" data-target="#geopy-tools">GeoPy</b>
+            </p>
+        </div>
+            <div class="col-md-3">
+            <p>
+                <b data-toggle="collapse" data-target="#machine-learning-tools">Machine Learning</b>
+            </p>
+        </div>
+            <div class="col-md-3">
+            <p>
+                <b data-toggle="collapse" data-target="#data-analysis-tools">Data Analysis</b>
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+<section id="nlp-tools" class="text-center collapse in">
+    <hr style="width: 50%; text-align: center">
+    <h2>Natural Language Processing</h2>
+    <br>
+    <br>
+    <p>Natural Language Processing ist die automatisierte Verarbeitung von natürlichen Texten. Bekannte Anwendungsgebiete sind Texterkennung und Autovervollständigung.
+    </p>
+    <div class="tool-cards">
+        <div class="row space-50 text-center" style="margin: auto">
+            <div class="card-deck" style="width: 60%;">
             <div class="card shadow">
                 <div class="zoom-hover">
                     <img src="/static/images/wordcloud.png" alt="" class="card-img-top">
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Word Clouds</h4>
+                    <hr>
                     <p class="card-text">A Word Cloud displays the most frequent words of a text / many text documents.
                         The more often a word occurs in a given text the bigger it is displayed.</p>
-                    <a href="{% url 'upload_wordcloud_text' %}" class="btn btn-primary">Try it out.</a>
+                    <a href="{% url 'upload_wordcloud_text' %}" class="black-text d-flex justify-content-end">
+                        <h5>Try it out <i class="fa fa-angle-double-right"></i></h5>
+                    </a>
                 </div>
             </div>
             <div class="card shadow">
@@ -48,11 +88,29 @@
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Topic Modelling with LDA</h4>
+                    <hr>
                     <p class="card-text">Topic Modelling deduces topics from a collection of texts. It belongs to the
                         category of unsupervised Machine Learning Algorithms.</p>
-                    <a href="{% url 'topic_modelling' %}" class="btn btn-primary">Try it out.</a>
+                        <a href="{% url 'topic_modelling' %}" class="black-text d-flex justify-content-end">
+                          <h5>Try it out <i class="fa fa-angle-double-right"></i></h5>
+                        </a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+</section>
+<section id="geopy-tools" class="collapse text-center">
+        <hr style="width: 50%; text-align: center">
+        <h2>GeoPy</h2>
+        <br>
+        <br>
+        <p>
+            Mit GeoPy lassen sich Koordinaten in Python verarbeiten und unter Verwendung von Bibliotheken wie Folium, interaktive Karten erstellen.
+        </p>
+    <div class="tool-cards">
+    <div class="row space-50">
+        <div class="card-deck" style="width: 30%">
                 <div class="card shadow" style="width: 90%">
                     <div class="zoom-hover">
                         <img src="/static/images/folium-map.png" alt="" class="card-img-top">
@@ -61,12 +119,29 @@
                         <h4 class="card-title">Folium Map</h4>
                         <p class="card-text">Folium is a handy library that creates interactive maps. To these maps one can add marker for
                         facilities or other places.</p>
-                        <a href="{% url 'folium' %}" class="btn btn-primary">Try it out.</a>
+                        <a href="{% url 'folium' %}" class="black-text d-flex justify-content-end">
+                          <h5>Try it out <i class="fa fa-angle-double-right"></i></h5>
+                        </a>
                     </div>
                 </div>
             </div>
     </div>
 </div>
+</section>
+<section id="machine-learning-tools" class="text-center collapse">
+    <hr style="width: 50%; align: center">
+    <h2>Machine Learning</h2>
+    <br>
+    <br>
+    <p>There is nothing here yet.</p>
+</section>
+<section id="data-analysis-tools"  class="text-center collapse">
+    <hr style="width: 50%; align: center">
+    <h2>Data Analysis</h2>
+    <br>
+    <br>
+    <p>There is nothing here yet.</p>
+</section>
 </body>
 
 

@@ -118,7 +118,7 @@ def upload_wordcloud_text(request):
         cloud.generate(text)
 
         #Set Wordcloud Colors with mask
-        mask = np.array(Image.open("Static/images/warm-color-mask2.jpg"))
+        mask = np.array(Image.open("Static/images/warm-color-mask2.jpg")) #Use absolute path in production: "/home/Nicolas1a6/PythonWebpage1/static/images/warm-color-mask2.jpg"
         plt.imshow(mask)
         image_colors = ImageColorGenerator(mask)
 

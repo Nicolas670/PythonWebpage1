@@ -524,6 +524,12 @@ body
     color: #fff;
     }
 /*---------------------------- Global ----------------------------*/
+#tool-menue b {
+    cursor: pointer;
+}
+.black-text{
+    color: black;
+}
 .mid-col{
     width: 80%;
     margin: 0 auto;
