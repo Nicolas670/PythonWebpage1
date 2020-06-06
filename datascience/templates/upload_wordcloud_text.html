@@ -8,8 +8,8 @@
 </head>
 <body>
 <section class="" id="wordcloud">
-    <div class="header-stripe grey big-white">
-        <ul class="fly-in-text">
+    <div class="header-stripe grey big-white"></div>
+    <ul class="fly-in-text mid big-white">
             <li>W</li>
             <li>O</li>
             <li>R</li>
@@ -20,7 +20,6 @@
             <li>U</li>
             <li>D</li>
         </ul>
-    </div>
 </section>
 <section class="code-description">
     <div class="text-center">
@@ -31,17 +30,19 @@
             </div>
             <div class="col-md-6">
                 <div class="description-background">
-                    <h3>Definition:</h3>
-                    <p>Eine Wordcloud stellt die Wörter eines oder mehrerer Texte proportional zur Häufigkeit ihres
+                    <h3>Definition</h3>
+                    <p class="block">Eine Wordcloud stellt die Wörter eines oder mehrerer Texte proportional zur Häufigkeit ihres
                         Auftreten in besagten Texten dar. Bei einer Vielzahl unbekannter Texte desselben Themengebiets
                         kann sie so schnell eine hilfreiche, grobe Übersicht über die Inhalte der Texte bieten.</p>
                     <br>
-                    <h3>Implementierung:</h3>
-                    <p>Das Wordcloud Modul für Python bietet eine simple Implementierung. Es ermöglicht einem unter
-                        anderem die maximale Anzahl der dargestellten Wörter, sowie ihre maximale Grö0e festzulegen.
+                    <h3>Implementierung</h3>
+                    <p class="block">
+                        Das Wordcloud Modul für Python bietet eine simple Implementierung. Es ermöglicht einem unter
+                        anderem die maximale Anzahl der dargestellten Wörter, sowie ihre maximale Größe festzulegen.
                         <br>Die Wordcloud selber wird mit Hilfe einer Matplotlib Leinwand dargestellt. Anschließend kann
                         sie auch als Bild gespeichert werden, um sie beispielsweise interaktiv auf einer Webseite
-                        darzustellen.</p>
+                        darzustellen.
+                    </p>
                 </div>
             </div>
         </div>
@@ -62,6 +63,7 @@
             </div>
         </form>
         <div class="" id="wc-output"></div>
+        <div id="img"></div>
     </div>
 </section>
 </body>
@@ -82,6 +84,7 @@
                     //$("#wc-output").html('<h1>{{' data.title '}} </h1>')
                     //$("#wc-output").html('<p> {{text}} </p>')
                     $('#wc-output').html('<img src="data:img/png;base64,'+data.cloud+'" style="height: 400px; width: auto">');
+                    $('#img').html('<img src="data:img/png;base64,'+data.img+'" style="height: 400px; width: auto">');
 
                 }
         });

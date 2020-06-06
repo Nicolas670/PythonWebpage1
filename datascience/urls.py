@@ -14,6 +14,7 @@ urlpatterns = [
     path("projekte", views.show_projects, name="projects"),
     path("tools/folium", views.create_folium_map, name="folium"),
     path("tools/topicModelling", views.topic_modelling, name="topic_modelling"),
+    path("tools/colorDdetection", views.color_detection, name="color_detection"),
 
 
 ]

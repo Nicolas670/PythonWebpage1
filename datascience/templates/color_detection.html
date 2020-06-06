@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Detection</title>
+</head>
+<body>
+<section class="header1" id="color_detection_header">
+        <ul class="fly-in-text mid-top big-white">
+            <li>C</li>
+            <li>O</li>
+            <li>L</li>
+            <li>L</li>
+            <li>O</li>
+            <li>R</li>
+            <li> </li>
+        </ul>
+
+        <ul class="fly-in-text mid-bot">
+            <li>D</li>
+            <li>E</li>
+            <li>T</li>
+            <li>E</li>
+            <li>C</li>
+            <li>T</li>
+            <li>I</li>
+            <li>O</li>
+            <li>N</li>
+        </ul>
+
+</section>
+
+<setion id="code-description">
+    <div class="code-description">
+    <div class="text-center">
+        <h2>So funktionierts:</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <br>
+                <img src="/static/images/color-detection-code.png" class="col-md-6-img zoom code-img shadow">
+            </div>
+            <div class="col-md-6">
+                <div class="description-background">
+                    <h3>Ziel</h3>
+                    <p class="block">
+                        Die Intention dieser Applikation ist es, die prominentesten Farben eines Bildes zu bestimmen.
+                    </p>
+                    <br>
+                    <h3>Implementierung</h3>
+                    <p class="block">
+                        Der KMeans Algorithmus eignet sich sehr gut für die Farbbestimmung. Er unterteilt einen Datensatz in Cluster
+                        mit möglichst großer Ähnlichkeit. In dieser Anwendung repräsentiert ein Cluster demnach einen Bereich gleicher Farbtöne.
+                        Die Anzahl der Cluster muss dem Algorithmus übergeben werden. Dieses Beispiel basiert auf 10 Clustern.
+                        Mehr Cluster haben eine differenziertere Farberkennung zur Folge. Eine zu große Anzahl Cluster hat jedoch eine
+                        Reduktion der Aussagekraft des Ergbnisses zur Folge.
+                        Es ist demnach sehr wichtig eine optimale Anzahl an Clustern zu bestimmen. Ein Ansatz hierfür ist, mehrere k (Cluster) zu testen.
+                    </p>
+                    <p><a href="https://github.com/Nicolas670/green-tree/blob/master/Color%20Detection.ipynb">Hier</a> geht es zum Notebook auf Github.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</setion>
+
+<section class="tool-tryout">
+    <div class="container text-center">
+        <p>Kopieren Sie die Bild Adresse eines beliebigen Bildes in das untenstehende Textfeld. <br>
+        Dieser Vorgang kann bis zu 30 Sekunden dauern.</p>
+        <form id="color_detection_form" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="mdl-textfield mdl-js-textfield">
+                <label for="text" class="mdl-textfield_label">URL:</label>
+                <input type="text" class="mdl-textfield_input" id="text">
+                <span class="mdl-textfiel_error"></span>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container text-center">
+        <div id="color-detection-example"></div>
+        <div class="row">
+            <div class="col-md-6" id="color-detection-image">
+                <img src="/static/images/color-detection-example-img.png" style="height: 400px; width: auto" alt="">
+            </div>
+            <div class="col-md-6" id="color-detection-pie-chart">
+                <img src="/static/images/color-detection-example-pie.png" style="height: 400px; width: auto" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).on('submit','#color_detection_form',function(event){
+        event.preventDefault();
+
+        $.ajax({
+                data: {'text':$('#text').val(),'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val()}, // get the form data
+                type: $(this).attr('method'), // GET or POST
+                url: $(this).attr('action'), // the file to call
+
+                success: function(data) { // on success..
+                    //alert("Created new User!");  update the DIV
+                    //$('#wc-output').html(text); // update the DIV
+                    //$("#wc-output").html('<h1>{{' data.title '}} </h1>')
+                    //$("#wc-output").html('<p> {{text}} </p>')
+                    $('#color-detection-image').html('<img src="data:img/png;base64,'+data.image+'" style="height: 400px; width: auto">');
+                    $('#color-detection-pie-chart').html('<img src="data:img/png;base64,'+data.pie+'" style="height: 400px; width: auto">');
+                    //$('#color-detection-example').html('<img src="#" style="height: 400px; width: auto">');
+                }
+        });
+    });
+
+</script>
+</html>
+{% endblock %}

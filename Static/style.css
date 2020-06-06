@@ -444,13 +444,41 @@ body
 .modal-fig{
     padding-bottom: 20px;
     }
+/*---------------------------- Fly in Text Top Bot ----------------------------*/
+.fly-in-text-top{
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%) translateY(-50%);
+    white-space: nowrap;
+    }
 
+.fly-in-text-bot{
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translateX(-50%) translateY(-50%);
+    white-space: nowrap;
+    }
+
+.mid-top{
+    padding-top: 40%;
+}
+
+.mid-bot{
+    padding-top: 60%;
+}
+
+.mid{
+    padding-top: 50%;
+}
 /*---------------------------- Fly in Text Scatter ----------------------------*/
 .fly-in-text{
     list-style: none;
     position: absolute;
     left: 50%;
-    top: 50%;
     transform: translateX(-50%) translateY(-50%);
     white-space: nowrap;
     }
@@ -537,8 +565,15 @@ body
 .block{
     text-align: justify;
 }
+
+#color_detection_header{
+    background: url("/static/images/Angkor-watt.jpg");
+}
+
 #topic_modelling{
-    background-color: #fff;}
+    background-color: #fff;
+    }
+
 #folium{
     background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("/static/images/earth.png");}
 
@@ -568,7 +603,7 @@ body
     width: 100%;
     margin: auto;
     position: absolute;
-    top: 50%;
+    top: 38.5%;
     }
 
 .grey{
